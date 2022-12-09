@@ -31,9 +31,70 @@ let generateCartItems = () => {
                 let { id, item } = x;
                 let search = shopItemsData.find((x) => x.id === id) || [];
                 let { img, price, name } = search;
-                return `
-        <div class="cart-item card">
-            <img width="100" src=${img} alt="" />
+                return `<div class="container">
+                <div class="row row-cols-4">
+                <div class="row">
+                  <div class="card h-100">
+                    <img src="${img}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">${name}</h5>
+                      <p class="card-text">R$ ${price}</p>
+                      <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
+                      <div class="cart-buttons">
+                          <div class="buttons">
+                              <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                              <div id=${id} class="quantity">Quantidade: ${item}</div>
+                              <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+                          </div>
+                          </div>
+                          <h3>R$ ${item * price}</h3>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                
+        `;
+            })
+            .join(""));
+    } else {
+        ShoppingCart.innerHTML = "";
+        label.innerHTML = `
+    <h2 class="label__carrinho">Carrinho Vazio</h2>
+    <a href="index.html">
+        <button class="HomeBtn">Voltar para Home</button>
+    </a>
+    <a href="produtos.html">
+        <button class="HomeBtn">Voltar para Produtos</button>
+    </a>
+    `;
+    }
+};
+
+/**
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="${img}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{name}</h5>
+        <p class="card-text">R$ ${price}</p>
+        <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
+        <div class="cart-buttons">
+            <div class="buttons">
+                <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                <div id=${id} class="quantity">Quantidade: ${item}</div>
+                <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+            </div>
+            </div>
+            <h3>R$ ${item * price}</h3>
+      </div>
+    </div>
+  </div>
+  -----
+  <div class="card">
+        <div class="cart-item">
+            <img width="100" src=${img} alt="" class="img-fluid" />
             <div class="details">
             <div class="title-price-x">
                 <h4 class="title-price">
@@ -52,19 +113,8 @@ let generateCartItems = () => {
             <h3>R$ ${item * price}</h3>
             </div>
         </div>
-        `;
-            })
-            .join(""));
-    } else {
-        ShoppingCart.innerHTML = "";
-        label.innerHTML = `
-    <h2>Carrinho Vazio</h2>
-    <a href="index.html">
-        <button class="HomeBtn">Voltar para Home</button>
-    </a>
-    `;
-    }
-};
+        </div>
+ */
 
 generateCartItems();
 
@@ -89,7 +139,7 @@ let increment = (id) => {
     update(selectedItem.id);
     localStorage.setItem("data", JSON.stringify(basket));
 };
-        
+
 /**
 --> Usado para diminuir a quantidade do item do produto selecionado em 1
 */
@@ -139,6 +189,9 @@ let removeItem = (id) => {
 
 --> Usado para calcular a quantidade total dos produtos selecionados com quantidade específica Quando a cesta estiver em branco, não mostrará nada
 */
+function funcao1() {
+    alert("Sua compra foi finalizada com sucesso, NotethField agradece sua preferência e aguardamos seu retorno.");
+}
 
 let TotalAmount = () => {
     if (basket.length !== 0) {
@@ -151,8 +204,8 @@ let TotalAmount = () => {
             .reduce((x, y) => x + y, 0);
 
         return (label.innerHTML = `
-    <h2>Total a Pagar : R$ ${amount}</h2>
-    <button class="checkout">Finalizar Compra</button>
+    <h2 class="label">Total a Pagar : R$ ${amount}</h2>
+    <button class="checkout" onclick="funcao1()" value="Exibir alert">Finalizar Compra</button>
     <button onclick="clearCart()" class="removeAll">Limpar Carrinho</button>
     `);
     } else return;

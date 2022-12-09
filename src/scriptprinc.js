@@ -19,11 +19,64 @@ let generateShop = () => {
             let { id, name, desc, img, price } = x;
             let search = basket.find((y) => y.id === id) || [];
             return `
-    <div id=product-id-${id} class="item card">
-        <img width="220" src=${img} alt="">
-        <div class="details">
-            <h3>${name}</h3>
-            <p>${desc}</p>
+            
+                    <div class="card">
+                        <div id=product-id-${id} class="item">
+                            <img src="${img}" class="card-img-top" alt="...">
+                                <div class="card-body details">
+                                    <h5 class="card-title">${name}</h5>
+                                    <p class="card-text">${desc}</p>
+                                    <div class="price-quantity">
+                                        <h2>R$ ${price} </h2>
+                                        <div class="buttons">
+                                            <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                                            <div id=${id} class="quantity">${search.item === undefined ? 0 : search.item}</div>
+                                            <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+`;
+    })
+    .join(""));
+};
+
+generateShop();
+            
+
+/*
+<div class="row row-cols-1 row-cols-md-3 g-2">
+                <div class="row">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+    <div id=product-id-${id} class="item">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body details">
+        <h5 class="card-title">${name}</h5>
+        <p class="card-text">${desc}</p>
+        <div class="price-quantity">
+                <h2>$ ${price} </h2>
+                <div class="buttons">
+                    <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                <div id=${id} class="quantity">${search.item === undefined ? 0 : search.item}</div>
+                    <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+                </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  --------
+  <div id=product-id-${id} class="item card" style="width: 18rem;">
+        <img src=${img} alt="" class="card-img-top">
+        <div class="details card-body">
+            <h3 class="card-title">${name}</h3>
+            <p class="card-text">${desc}</p>
             <div class="price-quantity">
                 <h2>$ ${price} </h2>
                 <div class="buttons">
@@ -34,12 +87,7 @@ let generateShop = () => {
             </div>
         </div>
     </div>
-    `;
-        })
-        .join(""));
-};
-
-generateShop();
+*/
 
 /**
  * ! used to increase the selected product item quantity by 1

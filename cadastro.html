@@ -82,8 +82,125 @@
             </div>
         </nav>
     </header>
+    <main class="container__form">
+        <h1 class="t-5 text-center">Fomulário de cadastro</h1>
+        <form class="row g-3 p-5 t-5 needs-validation" novalidate>
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Primeiro Nome</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Insira seu Nome" value=""
+                    required>
+                <div class="valid-feedback">
+                    Tudo Certo Aqui.
+                </div>
+                <div class="invalid-feedback">
+                    Insira seu Nome.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Sobrenome</label>
+                <input type="text" class="form-control" id="validationCustom02" placeholder="Insira seu Sobrenome"
+                    value="" required>
+                <div class="valid-feedback">
+                    Tudo Certo Aqui.
+                </div>
+                <div class="invalid-feedback">
+                    Insira seu Sobrenome.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">Usuário</label>
+                <div class="input-group has-validation">
+                    
+                    <input type="text" class="form-control" id="validationCustomUsername"
+                        aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Por favor insira um Usuário.
+                    </div>
+                    <div class="valid-feedback">
+                        Tudo Certo Aqui.
+                    </div>
+                </div>
+            </div>
 
-    <h1>Calma</h1>
+
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">Cidade</label>
+                <input type="text" class="form-control" id="validationCustom03" required>
+                <div class="invalid-feedback">
+                    Insira sua Cidade.
+                </div>
+                <div class="valid-feedback">
+                    Tudo Certo Aqui.
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">State</label>
+                <select class="form-select" id="validationCustom04" required>
+                    <option selected disabled value="">Selecione Seu Estado</option>
+                    <option>AC</option>
+                    <option>AL</option>
+                    <option>AP</option>
+                    <option>AM</option>
+                    <option>BA</option>
+                    <option>DF</option>
+                    <option>CE</option>
+                    <option>ES</option>
+                    <option>GO</option>
+                    <option>MA</option>
+                    <option>MT</option>
+                    <option>MS</option>
+                    <option>MG</option>
+                    <option>PA</option>
+                    <option>PB</option>
+                    <option>PR</option>
+                    <option>PE</option>
+                    <option>PI</option>
+                    <option>RJ</option>
+                    <option>RN</option>
+                    <option>RS</option>
+                    <option>RO</option>
+                    <option>RR</option>
+                    <option>SC</option>
+                    <option>SP</option>
+                    <option>SE</option>
+                    <option>TO</option>
+                </select></option>
+                <div class="invalid-feedback">
+                    Selecione um Estado.
+                </div>
+                <div class="valid-feedback">
+                    Tudo Certo Aqui.
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <label for="validationCustom05" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="validationCustom05" required>
+                <div class="invalid-feedback">
+                    Não encontramos seu CEP, por favor verifique.
+                </div>
+                <div class="valid-feedback">
+                    Tudo Certo Aqui.
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Eu aceito todos os Termos e Condições.
+                    </label>
+                    <div class="invalid-feedback">
+                        Você precisa aceitar os Termos e Condições, garantimos que seus dados não serem disponibilizados
+                        a terceiros.
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Confirmar</button>
+            </div>
+            </div>
+        </form>
+    </main>
 
     <footer class="bd-footer py-3 py-md-5 mt-5">
         <div class="container py-4 py-md-5 px-4 px-md-3">
@@ -154,7 +271,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="./src/validacaoform.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
