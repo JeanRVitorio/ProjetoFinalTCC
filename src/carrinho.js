@@ -31,10 +31,10 @@ let generateCartItems = () => {
                 let { id, item } = x;
                 let search = shopItemsData.find((x) => x.id === id) || [];
                 let { img, price, name } = search;
-                return `<div class="container">
+                return `<div  class="container">
                 <div class="row row-cols-4">
                 <div class="row">
-                  <div class="card h-100">
+                  <div class="card_carrinho">
                     <img src="${img}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">${name}</h5>
