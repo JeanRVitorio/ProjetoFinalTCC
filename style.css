@@ -6,7 +6,7 @@ body {
     background-image: url("./img/figuras/background.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 2000px;
+    
     background-attachment: fixed;
     width: auto;
 }
@@ -84,42 +84,36 @@ body {
 
 /*--Footer--*/
 
+.footer {
+    color: brown;
+}
+
 .logo__imagem__footer {
-    height: 15em;
+    height: 5em;
+}
+
+.footer_link {
+    color: rgb(198, 31, 31);
 }
 
 .footer_links {
     text-decoration: none;
-    color: antiquewhite;
+    color: brown;
 }
 
 .bd-footer {
-    background-color: #406051;
+    background-color: #37322f;
 }
 
 /*--Cards Dinâmicos--*/
 
-
-
-/*-----------*/
-.catalog {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 25px;
-    grid-row-gap: 25px;
-    margin: 0 50px;
-    border: 19px 2px #50ff69;
-
-}
-
-.cards {
-    margin-top: 6em;
+.cards {    
     display: grid;
     flex-direction: row;
     grid-template-columns: repeat(1, 320px);
     justify-content: space-evenly;
     gap: 15px;
+    margin-top: 6em;
 }
 
 .card__produ {
@@ -127,23 +121,10 @@ body {
     color: white;
     gap: 50px;
     border-radius: 10px;
-    margin: 25px 0;
-    
-    
-}
-
-.card__prod {
-    background-color: rgb(68, 107, 73);
-    color: white;
-    max-height: 1000px;
-    border-radius: 10px;
-    max-height: 300px;
-    padding: 25px;
-    align-content: center;
-}
-
-.shop {
-    margin-top: 5em;
+    margin: 10px 0;
+    background: rgb(64, 118, 48);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px; 
 }
 
 .price-quantity {
@@ -166,7 +147,7 @@ body {
 }
 
 .bi-plus-lg {
-    color: green;
+    color: rgb(3, 15, 3);
 }
 
 /*--Carrinho (Cart) Botões Superiores--*/
@@ -205,6 +186,8 @@ body {
 
 
 
+
+
 /**
   * ! style rules for cart-item
   **/
@@ -215,17 +198,10 @@ body {
     gap: 15px;
 }
 
-.card_carrinho {
-    display: grid;
-    align-items: center;
-    flex-direction: column;
-    width: 15rem auto;
-    height: 15rem;
-    background: #fff;
+.card_carrinho {  
+    background: rgb(64, 118, 48);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 10px;
-    margin: auto;
-    overflow: hidden;
+    border-radius: 10px;   
 }
 
 

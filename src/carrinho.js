@@ -31,29 +31,25 @@ let generateCartItems = () => {
                 let { id, item } = x;
                 let search = shopItemsData.find((x) => x.id === id) || [];
                 let { img, price, name } = search;
-                return `<div  class="container">
-                <div class="row row-cols-4">
-                <div class="row">
-                  <div class="card_carrinho">
-                    <img src="${img}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">${name}</h5>
-                      <p class="card-text">R$ ${price}</p>
-                      <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
-                      <div class="cart-buttons">
-                          <div class="buttons">
-                              <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-                              <div id=${id} class="quantity">Quantidade: ${item}</div>
-                              <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
-                          </div>
-                          </div>
-                          <h3>R$ ${item * price}</h3>
+                return `
+                <div class="card_carrinho bg-sucess mt-5">
+                    <div class"item">
+                        <img src="${img}" class="card-img-top mt-2" alt="...">
+                        <div class="card-body text-center details">
+                            <h5 class="card-title">${name}</h5>
+                            <p class="card-text">R$ ${price}</p>
+                            <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
+                                <div class="cart-buttons">
+                                    <div class="buttons">
+                                        <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                                        <div id=${id} class="quantity">Quantidade: ${item}</div>
+                                        <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+                                    </div>
+                                </div>
+                                    <h3>R$ ${item * price}</h3>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                </div>
-                </div>
-                
         `;
             })
             .join(""));
