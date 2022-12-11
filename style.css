@@ -45,12 +45,20 @@ body {
 
 /*--Carrosel--*/
 .imagem_carrosel {
-    margin-top: 4.5em;
+    margin-top: 5em;
     object-fit: cover;
     height: 500px;
 }
 
+.titulo__carrosel {
+    color: brown;
+    font-size: 50px;
+}
 
+.text__carrosel {
+    color: brown;
+    font-size: 40px;
+}
 
 /*--Textos--*/
 .container__index {
@@ -61,12 +69,10 @@ body {
     align-items: center;
     margin: 0 10em;
     padding: 1rem 0;
-    text-align: justify;
+    text-align: center;
 }
 
-.texto__index {
-    text-align: justify;
-}
+
 
 .txt {
     padding: 0 10em;
@@ -80,6 +86,10 @@ body {
 
 .banner__superior {
     margin-top: 5.5em;
+}
+
+.banner__quadr {
+    border-radius: 25px;
 }
 
 /*--Footer--*/
